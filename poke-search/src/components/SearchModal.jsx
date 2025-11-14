@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import pokeDex from  './assets/pokedex.json';
+import pokeDex from  '../assets/pokedex.json';
 
-export default function searchSuggestions(value) {
+export default function SearchSuggestions(value) {
 
     const [autoComplete, setAutoComplete] = useState(pokeDex);
 
@@ -21,3 +21,7 @@ export default function searchSuggestions(value) {
         </>
     )
 }
+
+<label>
+    <input type="text" />
+</label>

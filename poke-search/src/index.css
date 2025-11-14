@@ -1,8 +1,47 @@
-@import url(https://fonts.googleapis.com/css?family=Funnel+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+/* @import url(https://fonts.googleapis.com/css?family=Funnel+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
 @import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
 @import "tailwindcss";
 
 @theme {
   --font-default: Oswald, sans-serif;
   --font-alt: Funnel Sans, sans-serif;
+} */
+
+#tic-tac-toe {
+  background-color: slategray;
+  height: 98vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Trebuchet MS, sans-serif;
+}
+
+h1 {
+  align-self: center;
+  margin: 40px 0 0 0;
+}
+
+.board {
+  display: grid;
+  align-self: center;
+  margin: 40px 0 40px 0;
+  width: 350px;
+  height: 350px;
+  grid-template-columns: auto auto auto;
+}
+
+#reset {
+  width: 200px;
+  height: 40px;
+  align-self: center;
+  font-size: 20px;
+  font-family: Trebuchet MS, sans-serif;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  font-size: 80px;
+  font-family: 'Courier New', Courier, monospace
 }

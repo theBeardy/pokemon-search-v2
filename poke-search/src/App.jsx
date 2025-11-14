@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import './index.css';
+import SearchSuggestions from './components/SearchModal.jsx';
 
 function App() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (value) => {
     setQuery(value);
@@ -18,7 +20,7 @@ function App() {
       } catch (error) {
         
       }
-    }, 200);
+    }, 500);
 
     return () => clearTimeout(timeoutId);
   }, [query])
@@ -31,13 +33,14 @@ function App() {
           placeholder='Search by name or pokedex ID'
           onChange={(e) => handleChange(e.target.value)}
         />
-        { results !== '' && 
+        { query !== '' && 
           <div className='m-12 w-[400px] flex flex-col justify-center items-center bg-blue-900'>
             <p className='h-10 w-auto text-white font-alt capitalize'>{results.name}</p>
             <p className='h-10 w-auto text-white font-alt capitalize'>{results.id}</p>
             {results.sprites && <img src={results.sprites.front_default} alt={results.name} className="w-[200px]"/>}
           </div>
         }
+        { showModal === true && <SearchSuggestions query={query} />}
       </div>
     </>
   )
